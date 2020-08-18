@@ -1,0 +1,39 @@
+<% content_for :head do %>
+  <meta http-equiv="refresh" content="5; URL=<%= time_slices_path %>">
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Time Slices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Up</th>
+      <th>Down</th>
+      <th>Created_at</th>
+      <th>Updated_at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @time_slices.each do |time_slice| %>
+      <tr>
+        <td><%= time_slice.id %></td>
+        <td><%= time_slice.up %></td>
+        <td><%= time_slice.down %></td>
+        <td><%= format_datetime time_slice.created_at %></td>
+        <td><%= format_datetime time_slice.updated_at %></td>
+        <td><%= link_to 'Show', time_slice %></td>
+        <td><%= link_to 'Edit', edit_time_slice_path(time_slice) %></td>
+        <td><%= link_to 'Destroy', time_slice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Time Slice', new_time_slice_path %>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Up:</strong>
+  <%= @time_slice.up %>
+</p>
+
+<p>
+  <strong>Down:</strong>
+  <%= @time_slice.down %>
+</p><p>
+  <strong>Created_at:</strong>
+  <%= @time_slice.created_at %>
+</p><p>
+  <strong>Updated_at:</strong>
+  <%= @time_slice.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_time_slice_path(@time_slice) %> |
+<%= link_to 'Back', time_slices_path %>
