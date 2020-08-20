@@ -70,13 +70,6 @@ class CountersController < ApplicationController
     else
       return render :json => {'message':'Fail'}, status: 422
     end
-    debugger
-    # if @counter.increment!(:totalup,timeSlice_params[:up]) && @counter.increment!(:totaldown,timeSlice_params[:down])
-    #   debugger
-    #   return render :json => {'message':'Success'}
-    # else
-    #   return render :json => {'message':'Fail'}, status: 422
-    # end
   end
 
   private
